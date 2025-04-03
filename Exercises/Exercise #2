@@ -1,0 +1,49 @@
+class Employee {
+    String name;
+    String work;
+    double salary;
+
+    public Employee(String name, String work, double salary) {
+        this.name = name;
+        this.work = work;
+        this.salary = salary;
+    }
+
+    public String getWork() {
+        return work;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void displayInfo() {
+        System.out.println("Name: " + name);
+        System.out.println("Work: " + work);
+        System.out.println("Salary: $" + salary);
+    }
+}
+
+class DataScientist extends Employee {
+    public DataScientist(String name, double salary) {
+        super(name, "Data Scientist", salary);
+    }
+}
+
+class Researcher extends Employee {
+    public Researcher(String name, double salary) {
+        super(name, "Researcher", salary);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        DataScientist ds = new DataScientist("John", 80000);
+        Researcher researcher = new Researcher("Jane", 75000);
+
+        System.out.println("Employee Details:");
+        ds.displayInfo();
+        System.out.println();
+        researcher.displayInfo();
+    }
+}
